@@ -14,7 +14,7 @@ from looking_glass import looking_glass_text
 from part_of_speech import get_part_of_speech
 
 # Change text to another string:
-text = looking_glass_text
+text = "Such an excellent bag of words and an excellent word 'bags'."
 
 cleaned = re.sub("\W+", " ", text).lower()
 tokenized = word_tokenize(cleaned)
@@ -27,6 +27,8 @@ normalized = [
     normalizer.lemmatize(token, get_part_of_speech(token)) for token in filtered
 ]
 # Comment out the print statement below
-print(normalized)
+# print(normalized)
 
 # Define bag_of_looking_glass_words & print:
+bag_of_looking_glass_words = Counter(normalized)
+print(bag_of_looking_glass_words)
